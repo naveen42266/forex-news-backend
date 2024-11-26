@@ -43,7 +43,8 @@ passport.use(
     {
       clientID: GOOGLE_CLIENT_ID,
       clientSecret: GOOGLE_CLIENT_SECRET,
-      callbackURL: "/api/auth/google/callback", // Adjust for production if needed
+      callbackURL: "https://forex-news-naveen4.vercel.app/api/auth/google/callback"
+      // callbackURL: "/api/auth/google/callback", // Adjust for production if needed
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
