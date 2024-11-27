@@ -43,11 +43,13 @@ passport.use(
     {
       clientID: GOOGLE_CLIENT_ID,
       clientSecret: GOOGLE_CLIENT_SECRET,
-      callbackURL: "/api/auth/google/callback"
-      // callbackURL: "https://forex-news-naveen4.vercel.app/api/auth/google/callback"
+      // callbackURL: "/api/auth/google/callback"
+      callbackURL: "https://forex-news-naveen4.vercel.app/api/auth/google/callback"
       // callbackURL: "/api/auth/google/callback", // Adjust for production if needed
     },
     async (accessToken, refreshToken, profile, done) => {
+      console.log("index.js")
+      console.log(GOOGLE_CLIENT_ID,GOOGLE_CLIENT_SECRET,profile, "index.js")
       try {
         const database = getDatabase();
         const userCollection = database.collection(COLLECTION_USER);

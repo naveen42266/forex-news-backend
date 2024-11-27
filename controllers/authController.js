@@ -92,10 +92,11 @@ async function login(req, res) {
 
 // Simplified googleAuth function using req.user from Passport
 async function googleAuth(req, res) {
+  console.log("authController.js")
   try {
     const user = req.user; // Retrieved from Passport's `req.user` after successful authentication
+    console.log(user,"authController.js")
 
-    console.log(user)
 
     // Generate a custom JWT token for the user
     const token = jwt.sign({ id: user.userId, email: user.email, firstName: user.firstName, lastName: user.lastName, profilePicture: user.profilePicture,type: user.type }, JWT_SECRET, { expiresIn: JWT_EXPIRY });
